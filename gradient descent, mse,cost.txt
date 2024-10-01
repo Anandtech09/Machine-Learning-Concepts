@@ -1,0 +1,87 @@
+Mean square error
+
+gradient descent
+
+cost function
+
+learning rate
+
+
+1. Cost Function :
+==============
+
+The cost function (or loss function) measures how well a machine learning model's predictions match the actual data. The goal is to minimize this function so that the predictions are as accurate as possible.
+
+Example: Linear Regression
+-------------
+Suppose we're predicting house prices based on square footage. The model's job is to find a line that best fits the data points. The cost function will tell us how far off the model's predictions are from the actual house prices.
+
+A common cost function for regression problems is Mean Squared Error (MSE).
+
+2. Mean Squared Error (MSE) :
+========================
+
+MSE is the average of the squared differences between the actual values and the predicted values. It's a specific type of cost function, widely used in regression problems.
+
+ If you have multiple predictions, MSE averages these squared differences.
+
+3. Gradient Descent :
+=================
+
+Gradient descent is an optimization algorithm used to minimize the cost function by iteratively updating the model parameters (weights).
+
+Imagine you are standing on top of a hill (the point of maximum error) and you want to reach the bottom (the point of minimum error). Gradient descent tells you which direction to go (downhill) and by how much, to reduce the error.
+
+The Process
+---------------
+
+Start with an initial guess for the parameters (random weights).
+Compute the gradient (slope) of the cost function with respect to the parameters.
+Update the parameters in the direction opposite to the gradient (because you want to go downhill).
+Repeat this process until the cost is minimized (or until the updates become very small).
+
+4. Learning Rate
+=============
+
+The learning rate 
+𝛼
+α controls how big a step you take during gradient descent.
+
+Too small: You will take very tiny steps toward the minimum, and it will take a long time to converge (or you may get stuck in a local minimum).
+Too large: You may overshoot the minimum and fail to converge, causing the model to bounce around wildly without improving.
+
+
+Example:
+-------------
+
+Let's say the gradient descent step is like moving downhill:
+
+A small learning rate is like taking baby steps, ensuring you reach the minimum, but it will take a lot of time.
+A large learning rate is like running down the hill—you may get to the bottom faster, but you risk missing the minimum point and may overshoot.
+
+How They All Work Together ?
+--------------------------------------------
+
+Let's go back to our house price prediction example.
+
+Model's Initial Guess: The model starts with random weights (parameters), say predicting house prices based on square footage.
+-------------------------------
+
+Cost Function (MSE): The model makes predictions, and we calculate the error (MSE) between the actual house prices and the predicted
+------------------------------
+ prices.
+
+Gradient Descent: The gradient tells us the direction of the steepest increase in error. To minimize the error, we update the model weights
+-------------------------
+ in the opposite direction of the gradient.
+
+Learning Rate: The learning rate controls how big each step of the weight update is. After each step, we check if the error decreases. If it
+--------------------
+ does, the model is learning. We repeat this process until we reach the minimum error (the best fit line for our house price data).
+
+
+vanishing gradient
+===============
+
+
+The vanishing gradient problem occurs when the gradients (partial derivatives of the cost function with respect to the weights) become very small, causing the model's weight updates to become extremely slow. As a result, the network’s learning process effectively stalls, especially in deep neural networks.
